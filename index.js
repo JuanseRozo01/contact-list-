@@ -52,6 +52,34 @@ const eliminarContacto = (deleteContact) =>{
 }
 eliminarContacto(7)
 
+// bonus = función que permite actualizar un contacto:
+
+const actualizarContactoPorId = (id, newDatos) => {
+    const indice = listaDeContactos.findIndex(contacto => contacto.id === id);
+    if(indice !== -1){
+        listaDeContactos[indice] = {...listaDeContactos[indice], ...newDatos};
+        console.log("actualizacion de contacto", listaDeContactos[indice]);
+    }else{
+        console.log("este contacto", id, "no existe");
+    }
+
+}
+
+const actualizarContactos = 2;
+const newDatos =  {
+         id: 97,
+        nombres: "ana milena",
+        apellidos: "cuadrado" ,
+        telefono: 3567849764 ,
+        ubicaciones: {
+            ciudad: "tolima",
+            direccion: "caldas"
+        }
+            
+    };
+    actualizarContactoPorId(actualizarContactos, newDatos);
+
+
 for (let i = 0; i < listaDeContactos.length; i++){
     console.log(listaDeContactos[i]);
 }
